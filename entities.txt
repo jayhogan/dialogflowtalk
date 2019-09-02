@@ -1,0 +1,27 @@
+"gluten free","gf","gluten free","glutenless","no gluten"
+"regular","default","normal","reg","regular"
+"thick","chicago","deep dish","pan","thick"
+"thin","thin"
+
+
+"extra large","XL","ex lg","extra large","extra lg"
+"large","L","large","lg","lrg"
+"medium","M","mdm","med","medium"
+"small","S","sm","small"
+
+
+"anchovy","anchovy"
+"bacon","bacon"
+"banana pepper","banana pepper"
+"black olive","black olive"
+"cheese","cheese"
+"chicken","chicken"
+"garlic","garlic"
+"green pepper","green pepper"
+"ham","ham"
+"jalapeno","jalapeno"
+"mushroom","mushroom"
+"onion","onion","onions"
+"pepperoni","peparoni","peperoni","peperonni","pepparoni","pepperoni","peppy"
+"pineapple","pineapple"
+"sausage","sausage"

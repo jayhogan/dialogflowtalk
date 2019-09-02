@@ -1,0 +1,35 @@
+[
+  {
+    "value": "gluten free",
+    "synonyms": [
+      "gf",
+      "gluten free",
+      "glutenless",
+      "no gluten"
+    ]
+  },
+  {
+    "value": "regular",
+    "synonyms": [
+      "default",
+      "normal",
+      "reg",
+      "regular"
+    ]
+  },
+  {
+    "value": "thick",
+    "synonyms": [
+      "chicago",
+      "deep dish",
+      "pan",
+      "thick"
+    ]
+  },
+  {
+    "value": "thin",
+    "synonyms": [
+      "thin"
+    ]
+  }
+]

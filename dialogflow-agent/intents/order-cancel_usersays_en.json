@@ -1,0 +1,62 @@
+[
+  {
+    "id": "64d6ba25-f9f3-4ad0-ac37-eec1be63582d",
+    "data": [
+      {
+        "text": "don\u0027t send",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "1827a2a5-afe1-458f-aa42-6358b1f1c2eb",
+    "data": [
+      {
+        "text": "changed my mind",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "fa758f68-ddce-4083-a571-974feaf3826d",
+    "data": [
+      {
+        "text": "nevermind",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "85ad0bc8-aad9-4ea7-8530-70c671d13434",
+    "data": [
+      {
+        "text": "cancel",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "dbc87b7d-b64f-414b-8b4f-0ea9c985bbe1",
+    "data": [
+      {
+        "text": "Cancel order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

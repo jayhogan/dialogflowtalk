@@ -1,0 +1,74 @@
+{
+  "id": "4fdd0eda-77ff-480c-a997-7a6a06fd2fe7",
+  "name": "order-done",
+  "auto": true,
+  "contexts": [
+    "order"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "98394811-9616-4420-b39a-f37d863bab38",
+          "required": true,
+          "dataType": "@sys.location",
+          "name": "address",
+          "value": "$address",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What\u0027s your address?"
+            },
+            {
+              "lang": "en",
+              "value": "Where are you located?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "6e6b8ddb-c308-409f-a22a-300aee5a1365",
+          "required": true,
+          "dataType": "@sys.phone-number",
+          "name": "phone",
+          "value": "$phone",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What\u0027s your phone number?"
+            },
+            {
+              "lang": "en",
+              "value": "What number can I reach you at?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Thanks for your order. We\u0027\u0027ll get that out to you!"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

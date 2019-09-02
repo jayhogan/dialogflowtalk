@@ -1,0 +1,62 @@
+[
+  {
+    "id": "b9f38dd6-e780-4c8d-9e3b-fe3a9f41792f",
+    "data": [
+      {
+        "text": "Order a pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "7fdc965c-6be8-47eb-b68f-fab4c600019e",
+    "data": [
+      {
+        "text": "Deliver me a pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a52eaadb-6ea5-4aae-95d9-c4cfa87e50f7",
+    "data": [
+      {
+        "text": "Order something",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "87d9b8f5-3f45-48f3-8d71-c9e6ca078919",
+    "data": [
+      {
+        "text": "Start an order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c18abbb2-121a-4628-b6c3-d6a595b4934a",
+    "data": [
+      {
+        "text": "Place an order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

@@ -1,0 +1,838 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Dialogflow Slides</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+	<link rel="stylesheet" href="css/theme/white.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<style>
+		.reveal {
+			font-size: 50px;
+		}
+		.reveal h1, .reveal h2, .reveal h3 {
+			color: #405861;
+		}
+		/* .reveal pre {
+			font-size: .65em;
+		} */
+		.reveal pre code {
+			max-height: 800px;
+		}
+		.reveal section .logos img {
+			border: none;
+			box-shadow: none;
+		}
+		.reveal section.integrations img {
+			padding: 50px;
+		}
+		.reveal section.history li {
+			padding-bottom: 40px;
+		}
+		.reveal section.parameters img,
+		.reveal section.overview img,
+		.reveal section.agent img {
+			border: none;
+			box-shadow: none;
+		}
+		.reveal section.parameters .size,
+		.reveal section.context .location {
+			background-color: rgb(255, 205, 246);
+		}
+		.reveal section.parameters .crust,
+		.reveal section.context .time {
+			background-color: rgb(210, 195, 234);
+		}
+		.reveal section.parameters .toppings {
+			background-color: #9fecfe;
+		}
+		.reveal section.parameters.code {
+			background-color: black;
+			color: white;
+			font-family: 'Courier New', Courier, monospace;
+		}
+		.reveal section.responses img {
+			border: none;
+			box-shadow: none;
+		}
+		.reveal section.fulfillment img,
+		.reveal section.context img {
+			/* border: none; */
+			box-shadow: none;
+		}
+	</style>
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Title page - Done! -->
+			<section>
+				<h1>Conversational Interfaces with Dialogflow</h1>
+				<br/>
+				<br/>
+				<p>
+					<small>Presented by <a href="https://twitter.com/jayhogan">@jayhogan</a></small><br/>
+					<small>Technical Director, <a href="https://www.singlestoneconsulting.com">SingleStone Consulting</a></small>
+				</p>
+				<br/>
+				<br/>
+				<br/>
+				<div class="logos">
+					<img src="img/ss_logocolor.svg" height="100">
+				</div>
+				<aside class="notes">
+						<ul>
+								<li>Work for SingleStone - CX consulting firm here in Richmond</li>
+								<li>Been in IT for over 20 years, most of that time as a hands-on-keyboard developer. Web stuff for past 14 years</li>
+							</ul>
+				</aside>
+			</section>
+
+			<!-- Agenda - Done! -->
+			<section>
+					<h2>Agenda</h2>
+					<br/>
+					<br/>
+					<ol>
+						<li>Conversational Interfaces</li>
+						<li>Dialogflow Overview</li>
+						<li>Dialogflow Concepts</li>
+						<li>Code Walkthrough</li>
+					</ol>
+			</section>
+
+			<!-- Conversational Interfaces -->
+			<section>
+				<section>
+					<h2>Conversational Interfaces</h2>
+				</section>
+				<section>
+					<h2>What do you mean?</h2>
+				</section>
+				<section>
+					<h2>Some examples</h2>
+				</section>
+				<section>
+					<h2>Why is it hard?</h2>
+					<p>Segue to Dialogflow</p>
+				</section>
+			</section>
+
+			<!-- Dialogflow: Overview - Done! -->
+			<section class="overview">
+				<!-- Overview -->
+				<section>
+					<h2>Dialogflow is a service that...</h2>
+					<br/>
+					<br/>
+					<p>"gives users new ways to interact with your product by building engaging voice and text-based conversational interfaces, such as voice apps and chatbots, powered by AI."</p>
+				</section>
+
+				<!-- How does it work? -->
+				<section>
+					<h2>How does it work?</h2>
+					<img src="img/df_how.png" height="900"/>
+					<aside class="notes">
+						<ul>
+							<li>Text or speech → Maps to intents → Match and extract parameters/entities → Trigger fulfillment → Deliver response via integration</li>
+							<li>Leverages NLP/machine learning in intent matching and parameter extraction</li>
+						</ul>
+					</aside>
+				</section>
+
+				<!-- Why you care, Value Prop -->
+				<section>
+					<h2>Why you should care</h2>
+					<br/>
+					<br/>
+					<br/>
+					<div class="fragment fade-in">
+						<p>Easy to use</p>
+						<p>Solves hard problems</p>
+						<p>Its a service, not a platform</p>
+						<p>Many built-in integrations</p>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Easy to use - Abstractions that make sense and the tools are approachable</li>
+							<li>Solves hard problems - NLP and Machine Learning requires specialized skillset and even then is very difficult</li>
+							<li>It's a service, not a product or platform - It does what it does well and gets out of your way</li>
+							<li>Out of the box integrations - Works with many popular chat/voice platforms such as Slack, Google Assistant, Facebook Messenger, Google Hangouts, Skype, Twilio, Google Telephony, and more...</li>
+							<li>Conversations as a Service</li>
+						</ul>
+					</aside>
+				</section>
+
+				<!-- history -->
+				<!-- <section class="history">
+					<h2>A bit of history</h2>
+					<br/>
+					<br/>
+					<ul>
+						<li class="fragment fade-in"><strong>Oct 2011</strong> - Assistant Andriod App released by Speaktoit</li>
+						<li class="fragment fade-in"><strong>Sept 2014</strong> - Speaktoit launches Api.ai</li>
+						<li class="fragment fade-in"><strong>Sept 2016</strong> - Google acquires Speaktoit and Api.ai product</li>
+						<li class="fragment fade-in"><strong>Dec 2016</strong> - Api.ai re-branded as Dialogflow. Assistant app discontinued.</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Assistant - #6 top grossing app in the Lifestyle category on Google Play store (13MM users)</li>
+						</ul>
+					</aside>
+				</section> -->
+			</section>
+
+			<!-- Dialogflow concepts - Done! -->
+			<section>
+				<h2>Dialogflow Concepts</h2>
+			</section>
+
+			<!-- Dialogflow Concepts: Agent - Done! -->
+			<section class="agent">
+				<h2>Agent</h2>
+				<img src="img/agent_bot.jpeg"/>
+				<aside class="notes">
+					<ul>
+						<li>Virtual agent that handles conversations with your end users</li>
+						<li>Similar to a human call center agent</li>
+						<li>You train your agent to handle conversation scenarios</li>
+						<li>Top-level container for settings</li>
+					</ul>
+				</aside>
+			</section>
+
+			<!-- Dialogflow Concepts: Intent - Done! -->
+			<section class="intents">
+				<!-- Overview -->
+				<section>
+					<h2>Intents</h2>
+					<br/>
+					<p>Categorizes the user's intention for a single conversation cycle</p>
+					<br/>
+					<img src="img/intent_match.png">
+					<aside class="notes">
+						<ul>
+							<li>Similar to Alexa's intent</li>
+							<li>Can (and should) have many intents</li>
+							<li>User text or speech is matched against an intent (by Dialogflow)</li>
+							<li>Output of an intent is a response to the user</li>
+							<li>I think of an intent as a method call for your agent</li>
+						</ul>
+					</aside>
+				</section>
+
+				<!-- Training Phrases -->
+				<section>
+					<h2>Training Phrases</h2>
+					<br/>
+					<br/>
+					<p style="line-height: 1.5em"><em>
+						Order a pizza<br/>
+						Can I get a small pizza, please?<br/>
+						I'd like a cheese pizza<br/>
+						Send me a pan pizza<br/>
+						Deliver a medium thin crust pizza<br/>
+						Order a large pizza with sausage, pepperoni and cheese<br/>
+						Send me a pie!
+					</em></p>
+					<aside class="notes">
+						<ul>
+							<li>Example phrases of what a user might say</li>
+							<li>Used to match an intent</li>
+							<li>You don't need to provide every example but 10 training phrases is a best practice</li>
+						</ul>
+					</aside>
+				</section>
+
+				<!-- Default Intents -->
+				<section>
+					<h2>Default Intents</h2>
+					<br/>
+					<br/>
+					<div class="fragment fade-in">
+						<h3>Welcome intent</h3>
+						<p>
+							<strong>Training phrases: </strong><em>hi, hey, howdy, hi there, what's up?, greetings, long time no see</em><br/>
+							<strong>Responses: </strong><em>Hi there, Can I help you?, What can I do for you?</em>
+						</p>
+					</div>
+					<br/>
+					<br/>
+					<div class="fragment fade-in">
+						<h3>Fallback intent</h3>
+						<p>
+							<strong>Responses: </strong><em>Can you repeat that?, Sorry?, What was that?, Does not compute</em>
+						</p>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Created when an agent is created</li>
+							<li>Welcome - triggered by the welcome event</li>
+							<li>Fallback - triggered when no custom intent is matched</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Dialogflow Concepts: Parameters - Done!-->
+			<section class="parameters">
+				<section>
+					<h2>Parameters</h2>
+					<br/>
+					<br/>
+					<p style="line-height: 1.5em"><em>
+						Can I get a <span class="size">small</span> pizza, please?<br/>
+						I'd like a <span class="toppings">cheese</span> pizza<br/>
+						Send me a <span class="crust">pan</span> pizza<br/>
+						Deliver a <span class="size">medium</span> <span class="crust">thin</span> crust pizza<br/>
+						Order a <span class="size">large</span> pizza with <span class="toppings">sausage, pepperoni and cheese</span><br/>
+						Deliver me an <span class="size">xl</span>, <span class="crust">pan</span> pizza with <span class="toppings">spinach and onions</span>
+					</em></p>
+					<aside class="notes">
+						<ul>
+							<li>The parts of the user utterance that are important for building a response</li>
+							<li>Each intent has it's own set of parameters (you can have more than 1)</li>
+							<li>Just like method parameters</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Define and annotate</h2>
+					<img class="fragment fade-in" src="img/param_list.png"/>
+					<br/>
+					<img class="fragment fade-in" src="img/phrase_annotate.png"/>
+					<aside class="notes">
+						<ul>
+							<li>Name - unique name</li>
+							<li>Entity - type (more on this later)</li>
+							<li>Value - Usually same as name</li>
+							<li>Required? - Parameter must be provided</li>
+							<li>Is List? - Multi-item parameters</li>
+							<li>Prompts? - Used when required parameter is missing</li>
+							<li>Default value - Value provided for missing, non-required params</li>
+							<li>Dialogflow console provides a nice GUI for annotation</li>
+							<li>Define parameters before training phrases</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>List Parameters</h2>
+					<br/>
+					<br/>
+					<p><em>I'd like a <span class="toppings">cheese</span> pizza</em></p>
+					<p><em>I'd like a <span class="toppings">sausage and cheese</span> pizza</em></p>
+					<p><em>I'd like a <span class="toppings">sausage, pepperoni and cheese</span> pizza</em></p>
+					<br/>
+					<pre class="fragment fade-in" style="width: 50%"><code class="hljs javascript" data-trim data-noescape>
+						// Maps to an array
+						Array.isArray(agent.parameters.toppings);  // true
+						
+						console.log(agent.parameters.toppings);
+						// ['cheese']
+						// ['sausage', 'cheese']
+						// ['sausage', 'pepperoni', 'cheese']
+					</code></pre>
+					
+					<aside class="notes">
+						<ul>
+							<li>Lists can contain multiple items</li>
+							<li>Dialogflow is smart about it</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Parameter References</h2>
+					<br/>
+					<p>
+						You ordered a <span class="size">$size</span> <span class="crust">$crust</span> crust pizza with <span class="toppings">$toppings</span>
+					</p>
+					<br/>
+					<pre class="fragment fade-in" style="width: 60%"><code class="hljs javascript" data-trim data-noescape>
+						console.log(agent.parameters);
+						
+						//{ size: 'small', crust: 'thin', toppings: ['sausage', 'cheese'] }
+					</code></pre>
+					<br/>
+					<p class="fragment fade-in">
+							You ordered a <span class="size">small</span> <span class="crust">thin</span> crust pizza with <span class="toppings">sausage and cheese</span>
+						</p>
+					<aside class="notes">
+						<ul>
+							<li>Can be used in: Responses, Prompts and parameter values</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Prompts</h2>
+					<br/>
+					<br/>
+					<p><strong>User:</strong> I'd like a pizza</p>
+					<br/>
+					<p class="fragment fade-in"><strong>Agent:</strong> What size pizza would you like?</p>
+					<aside class="notes">
+						<ul>
+							<li>Triggered when required parameters are missing</li>
+							<li>Mulitple variants.</li>
+							<li>The parameter order determines the order in which DF will prompt for missing parameters</li>
+							<li>Once all parameters are provided, intent processing will continue</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Dialogflow Concepts: Responses - Done!-->
+			<section class="responses">
+				<section>
+					<h2>Responses</h2>
+					<br/>
+					<br/>
+					<div class="fragment fade-in">
+						<p>Static</p>
+						<p>Dynamic</p>
+						<p>Platform specific</p>
+						<p>Rich (Graphical)</p>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>The content that is returned to the user after an intent is processed</li>
+							<li>Think of it as what is returned from the method call</li>
+							<li>Can define different responses for each supported platform</li>
+							<li>Can be leveraged by static or dynamic responses</li>
+							<li>Leverage capabilities of that platform</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Rich Responses</h2>
+					<h3>Quick Reply</h3>
+					<br/>
+					<br/>
+					<img src="img/rich_quickreply.png"/>
+					<aside class="notes">
+						<ul>
+							<li></li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Rich Responses</h2>
+					<h3>Image</h3>
+					<img src="img/rich_image.png"/>
+					<aside class="notes">
+						<ul>
+							<li></li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Rich Responses</h2>
+					<h3>Card</h3>
+					<img src="img/rich_card.png"/>
+					<aside class="notes">
+						<ul>
+							<li></li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Rich Responses</h2>
+					<h3>Custom Payload</h3>
+					<img src="img/rich_custom.png"/>
+					<aside class="notes">
+						<ul>
+							<li></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Dialogflow Concepts: Entities - Done! -->
+			<section>
+				<section>
+					<h2>Entities</h2>
+					<br/>
+					<br/>
+					<div class="fragment fade-in">
+						<p>Types for parameters</p>
+						<p>System entities</p>
+						<p>Developer entities</p>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Types for your parameters - determines how parameter values are extracted</li>
+							<li>System entities = built-in</li>
+							<li>Developer entities = custom. Powerful</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>System Entities</h2>
+					<table>
+						<tr class="fragment fade-in">
+							<th style="width:400px">Date and Time</th>
+							<td>date-time, date, date-period, time, time-period</td>
+						</tr>
+						<tr class="fragment fade-in">
+							<th>Numbers</th>
+							<td>number, cardinal, ordinal, integer, sequence, flight</td>
+						</tr>
+						<tr class="fragment fade-in">
+							<th>Amounts<br/>with units</th>
+							<td>area, currency, length, speed, volume weight, percents, temperature, duration, age</td>
+						</tr>
+						<tr class="fragment fade-in">
+							<th>Unit names</th>
+							<td>currencies, area, length, speed, etc...</td>
+						</tr>
+						<tr class="fragment fade-in">
+							<th>Geography</th>
+							<td>address, zip code, capital, country, city, state, attraction, airports</td>
+						</tr>
+						<tr class="fragment fade-in">
+							<th>Contacts</th>
+							<td>people names, email, phone numbers</td>
+						</tr>
+						<tr class="fragment fade-in">
+							<th>Other stuff</th>
+							<td>colors, languages, url, etc...</td>
+						</tr>
+					</table>
+					<aside class="notes">
+						<ul>
+							<li>Pre-built entities provided by Dialogflow</li>
+							<li>Nearly 50 built-in entities</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Developer entities</h2>
+					<div class="fragment fade-in">
+						<p>Type name</p>
+						<p>Type entries</p>
+						<p>Aliases for each type entry (optional)</p>
+					</div>
+					<br/>
+					<pre class="fragment fade-in"><code class="hljs javascript" data-trim data-noescape>
+						const entity = {
+							type: 'Crust',
+							entries: [
+								{ name: 'thin' },
+								{ name: 'regular',     aliases: [ 'default', 'normal', 'reg'] },
+								{ name: 'thick',       aliases: [ 'pan', 'chicago', 'deep dish'] }
+								{ name: 'gluten free', aliases: [ 'gf', 'no gluten'] }
+							]	
+						}
+					</code></pre>
+					<aside class="notes">
+						<ul>
+							<li>Create your own entities to supplement system entities</li>
+							<li>Type: type of information you want to extract (e.g. vegetable)</li>
+							<li>Entries: a set of phrases that make up the type</li>
+							<li>Aliasas: equivalent phrases for each enty</li>
+							<li>Raw mode as CSV or JSON</li>
+							<li>API to update entries</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Dialogflow Concepts: Fulfillment - Done! -->
+			<section class="fulfillment">
+				<section>
+					<h2>Fulfillment</h2>
+					<br/>
+					<p>
+						Code that executes<br/>
+						in response to an intent<br/>
+						to perform custom logic and responses
+					</p>
+					<aside class="notes">
+						<ul>
+							<li>Code that <em>could</em> execute in response to an intent</li>
+							<li>Provide dynamic logic and/or responses</li>
+							<li>Only needed if you are using 1 or more standard integrations</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>How it works</h2>
+					<img src="img/interaction_fulfillment.png"/>
+					<aside class="notes">
+						<ul>
+							<li>Intent is matched</li>
+							<li>If fulfillment is enabled for intent</li>
+							<li>Triggers fulfillment with name of intent, parmaters, etc..</li>
+							<li>Fulfillment performs logic and creates response</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Inline editor</h2>
+				<img src="img/inline_editor.png"/>
+					<aside class="notes">
+						<ul>
+							<li>Deployed as a Firebase function</li>
+							<li>Limitations:</li>
+							<li>Node 8</li>
+							<li>Only supports package.json and index.js</li>
+							<li>Deployment can be slow</li>
+							<li>Requires billing to be enabled (in Firebase) for network calls outside Google network (5gb free/mo and $.12 per/gb)</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Custom webhook</h2>
+					<img src="img/webhook2.png"/>
+					<aside class="notes">
+						<ul>
+							<li>Publicly addressable</li>
+							<li>Supports HTTPS</li>
+							<li>Secure by Basic auth or custom header</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>NodeJS Library</h2>
+					<br/>
+					<pre><code class="hljs javascript" data-trim data-noescape>
+const functions = require('firebase-functions');
+const { WebhookClient } = require('dialogflow-fulfillment');
+
+// Magic function name - DO NOT CHANGE!
+exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
+	const agent = new WebhookClient({ request, response });
+	
+	function orderPizza(agent) {
+		// TODO - Custom logic...
+    agent.add('Your pizza is in the oven!');
+	}
+	
+	let intentMap = new Map();
+  intentMap.set('order-pizza', orderPizza);
+  agent.handleRequest(intentMap);
+});
+					</code></pre>
+					<aside class="notes">
+						<ul>
+							<li>Simplifies fulfillment logic</li>
+							<li>Used by default in the Inline editor</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Context - Done!-->
+			<section class="context">
+				<section>
+					<h2>Context</h2>
+					<br/>
+					<p class="fragment fade-in">
+						<strong>User:</strong> What's the weather like in <span class="location">Richmond, VA?</span><br/>
+						<strong>Agent:</strong> <span class="time">Right now</span> in <span class="location">Richmond</span>, it's 78° under partly cloudy skies.
+					</p>
+					<br/>
+					<p class="fragment fade-in">
+							<strong>User:</strong> Will it rain <span class="time">tomorrow?</span><br/>
+							<strong>Agent:</strong> <span class="time">Tomorrow</span> in <span class="location">Richmond</span>, there is an 80% chance of rain.
+					</p>
+					<br/>
+					<p class="fragment fade-in">
+							<strong>User:</strong> Will it be hot?<br/>
+							<strong>Agent:</strong> <span class="time">Tomorrow</span> in <span class="location">Richmond</span>, the high is 85° and the low is 66°.
+					</p>
+					<aside class="notes">
+						<ul>
+							<li>Just like a normal conversation context</li>
+							<li>Your users don't have to repeat themselves</li>
+							<li>You can control the flow of the conversation</li>
+							<li>Make the interaction feel more natural</li>
+							<li>Defined as a "string" with some associated data</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>How it works</h2>
+					<img src="img/contexts.jpg" width="900"/>
+					<aside class="notes">
+						<ul>
+							<li>If an intent has an output context, it becomes active whenever that intent is matched</li>
+							<li>If an intent has an input context, it only matches if that context is active</li>
+							<li>Lifespan - defines how the duration of the context (time and turns)</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Events - Done! -->
+			<!-- <section>
+				<section>
+					<h2>Events</h2>
+					<br/>
+					<p class="fragment fade-in">Trigger an intent without user entry</p>
+					<p class="fragment fade-in">Pre-defined platform events</p>
+					<p class="fragment fade-in">Custom developer events</p>
+
+					<aside class="notes">
+						<ul>
+							<li>Invoke intents based on something other than user input</li>
+							<li>Platform-specific events - Google Assistant has many</li>
+							<li>Custom events</li>
+						</ul>
+					</aside>
+				</section>
+			</section> -->
+
+			<!-- Integrations - Done! -->
+			<section class="integrations">
+				<section>
+					<h2>Integrations</h2>
+					<aside class="notes">
+						<ul>
+							<li>Standard or one-click</li>
+							<li>Build your own</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Standard</h2>
+					<div class="logos">
+						<img src="img/google-assistant.png" height="300">
+						<img src="img/slack.png" height="300">
+						<img src="img/facebook-messenger.png" height="300">
+					</div>
+					<div class="logos">
+						<img src="img/twitter.png" height="300">
+						<img src="img/skype.png" height="300">
+						<img src="img/twilio.png" height="300">
+					</div>
+					<p>And more...</p>
+					<aside class="notes">
+						<ul>
+							<li>Lots of choices</li>
+							<li>Minimal control</li>
+							<li>Fulfillment for custom logic</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Build your own integration</h2>
+					<img src="img/interaction_api.png">
+					<aside class="notes">
+						<ul>
+							<li>Integrate into your custom UI</li>
+							<li>Provide more control</li>
+							<li>Leverage the API (detectIntent)</li>
+							<li>Typically will bypass fulfillment in this case</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Example: Pizzaz - Done! -->
+			<section>
+				<section>
+					<h2>Example: PizzazBot</h2>
+					<h3>Scenario</h3>
+					<p>
+						You are the CTO for Pizzaz, a pizzeria startup in Scott's Addition.<br/>
+						You launched earlier this year with a custom online portal to cater to the
+						hipster scene.<br/>
+						You have a theory that a simpler, chat-based interface may win over more millenial
+						customers in the area.<br/>
+						You decide to build PizzazBot as a pilot and target the Slack and Google Assistant
+						platforms in the initial release.
+					</p>
+					<aside class="notes">
+						<ul>
+							<li>foo</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Requirements</h2>
+					<br/>
+					<ul>
+						<li>Place an order</li>
+						<li>Select size, crust and toppings</li>
+						<li>Order multiple pizzas</li>
+						<li>Enter delivery information</li>
+						<li>Track pizza order by order #</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>foo</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Summary -->
+			<section>
+				<h2>Thanks for coming!</h2>
+				<aside class="notes">
+					<ul>
+						<li>foo</li>
+					</ul>
+				</aside>
+			</section>
+		</div>
+	</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				width: 1920,
+				height: 1200,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+						hljs.configure({ tabReplace: '  '});
+						hljs.initHighlightingOnLoad();
+					} }
+				]
+			});
+		</script>
+	</body>
+</html>

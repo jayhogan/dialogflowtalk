@@ -1,0 +1,98 @@
+[
+  {
+    "value": "anchovy",
+    "synonyms": [
+      "anchovy"
+    ]
+  },
+  {
+    "value": "bacon",
+    "synonyms": [
+      "bacon"
+    ]
+  },
+  {
+    "value": "banana pepper",
+    "synonyms": [
+      "banana pepper"
+    ]
+  },
+  {
+    "value": "black olive",
+    "synonyms": [
+      "black olive"
+    ]
+  },
+  {
+    "value": "cheese",
+    "synonyms": [
+      "cheese"
+    ]
+  },
+  {
+    "value": "chicken",
+    "synonyms": [
+      "chicken"
+    ]
+  },
+  {
+    "value": "garlic",
+    "synonyms": [
+      "garlic"
+    ]
+  },
+  {
+    "value": "green pepper",
+    "synonyms": [
+      "green pepper"
+    ]
+  },
+  {
+    "value": "ham",
+    "synonyms": [
+      "ham"
+    ]
+  },
+  {
+    "value": "jalapeno",
+    "synonyms": [
+      "jalapeno"
+    ]
+  },
+  {
+    "value": "mushroom",
+    "synonyms": [
+      "mushroom"
+    ]
+  },
+  {
+    "value": "onion",
+    "synonyms": [
+      "onion",
+      "onions"
+    ]
+  },
+  {
+    "value": "pepperoni",
+    "synonyms": [
+      "peparoni",
+      "peperoni",
+      "peperonni",
+      "pepparoni",
+      "pepperoni",
+      "peppy"
+    ]
+  },
+  {
+    "value": "pineapple",
+    "synonyms": [
+      "pineapple"
+    ]
+  },
+  {
+    "value": "sausage",
+    "synonyms": [
+      "sausage"
+    ]
+  }
+]

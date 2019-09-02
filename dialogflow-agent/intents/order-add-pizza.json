@@ -1,0 +1,129 @@
+{
+  "id": "bfb60277-98da-43ac-b356-ccfd7550f3e3",
+  "name": "order-add-pizza",
+  "auto": true,
+  "contexts": [
+    "order"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "3301a5eb-e290-49b1-ac20-3e9b8ca5d04a",
+          "required": true,
+          "dataType": "@size",
+          "name": "size",
+          "value": "$size",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What size? We offer small, medium, large and extra large."
+            },
+            {
+              "lang": "en",
+              "value": "Small, medium, large or extra large?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "95b035d0-3699-4044-a686-69ac8b42ffdc",
+          "required": true,
+          "dataType": "@topping",
+          "name": "topping",
+          "value": "$topping",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What toppings would you like on your pizza?"
+            },
+            {
+              "lang": "en",
+              "value": "And for the toppings?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": true
+        },
+        {
+          "id": "7edfaa18-36a1-4c03-a3b5-56d8efd7569d",
+          "required": true,
+          "dataType": "@crust",
+          "name": "crust",
+          "value": "$crust",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What kind of crust?"
+            },
+            {
+              "lang": "en",
+              "value": "What crust would you like?"
+            },
+            {
+              "lang": "en",
+              "value": "And for the crust?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "slack",
+          "lang": "en",
+          "title": "",
+          "replies": [
+            "Add a pizza",
+            "That\u0027s it"
+          ]
+        },
+        {
+          "type": "suggestion_chips",
+          "platform": "google",
+          "lang": "en",
+          "suggestions": [
+            {
+              "title": "Add a pizza"
+            },
+            {
+              "title": "That\u0027s it"
+            }
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Got it. You want a $size, $crust crust with $topping. 🍕",
+            "A $size $topping 🍕with $crust crust. You bet."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "slack": true,
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": true,
+  "fallbackIntent": false,
+  "events": []
+}

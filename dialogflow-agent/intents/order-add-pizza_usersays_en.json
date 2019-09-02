@@ -1,0 +1,238 @@
+[
+  {
+    "id": "d5d9830c-712a-4c66-8af6-f6eb6cd68b2b",
+    "data": [
+      {
+        "text": "add a ",
+        "userDefined": false
+      },
+      {
+        "text": "small",
+        "alias": "size",
+        "meta": "@size",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "cheese",
+        "alias": "topping",
+        "meta": "@topping",
+        "userDefined": false
+      },
+      {
+        "text": " pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5d2dd535-c33f-461c-b637-bcceb09732b7",
+    "data": [
+      {
+        "text": "Add a ",
+        "userDefined": false
+      },
+      {
+        "text": "small",
+        "alias": "size",
+        "meta": "@size",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "sausage",
+        "alias": "topping",
+        "meta": "@topping",
+        "userDefined": true
+      },
+      {
+        "text": " and ",
+        "userDefined": false
+      },
+      {
+        "text": "cheese",
+        "alias": "topping",
+        "meta": "@topping",
+        "userDefined": true
+      },
+      {
+        "text": " pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f2126144-c442-4b33-9824-f77548b868ee",
+    "data": [
+      {
+        "text": "Add a ",
+        "userDefined": false
+      },
+      {
+        "text": "pepperoni",
+        "alias": "topping",
+        "meta": "@topping",
+        "userDefined": false
+      },
+      {
+        "text": " and ",
+        "userDefined": false
+      },
+      {
+        "text": "cheese",
+        "alias": "topping",
+        "meta": "@topping",
+        "userDefined": false
+      },
+      {
+        "text": " pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "fda09c02-12ce-4837-83f0-563f732d7612",
+    "data": [
+      {
+        "text": "Add a ",
+        "userDefined": false
+      },
+      {
+        "text": "small",
+        "alias": "size",
+        "meta": "@size",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "pan",
+        "alias": "crust",
+        "meta": "@crust",
+        "userDefined": false
+      },
+      {
+        "text": " pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e4f4474a-dd07-4ad6-897c-77fe9ede99f3",
+    "data": [
+      {
+        "text": "Another pizza please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "fa131b4c-b141-43cd-93d5-cbccb3429004",
+    "data": [
+      {
+        "text": "Add a pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "069d4fb4-6696-47f1-a161-4466cccb4efc",
+    "data": [
+      {
+        "text": "Add a pizza to the order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c1aa27f0-9655-4b24-9ba1-636862207214",
+    "data": [
+      {
+        "text": "I want a pie",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "79c94962-0ad5-4d90-86fc-f8514096fa9c",
+    "data": [
+      {
+        "text": "I want a pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e57eebd7-c9f4-4576-a37e-e23101a07c01",
+    "data": [
+      {
+        "text": "I would like a ",
+        "userDefined": false
+      },
+      {
+        "text": "small",
+        "alias": "size",
+        "meta": "@size",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "thin",
+        "alias": "crust",
+        "meta": "@crust",
+        "userDefined": false
+      },
+      {
+        "text": " crust pizza with ",
+        "userDefined": false
+      },
+      {
+        "text": "sausage, pepperoni and cheese",
+        "alias": "topping",
+        "meta": "@topping",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "id": "a2ec3213-266d-4d48-9f4d-bdd3f37411ee",
+  "name": "order-cancel",
+  "auto": true,
+  "contexts": [
+    "order"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "You bet. Order cancelled.",
+            "We have cancelled your order.",
+            "Sure thing. Come back later when you are ready to order."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

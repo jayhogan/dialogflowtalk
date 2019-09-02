@@ -1,0 +1,40 @@
+{
+  "id": "b0f6135a-aacf-40a2-9011-bfc4e7742442",
+  "name": "order-track",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "18ad732b-774a-4c02-a048-a367d7ac6c7a",
+          "required": true,
+          "dataType": "@sys.number-integer",
+          "name": "order-id",
+          "value": "$order-id",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": true,
+  "fallbackIntent": false,
+  "events": []
+}

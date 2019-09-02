@@ -1,0 +1,67 @@
+{
+  "id": "287bd927-6938-4f27-a7f9-6d0002254af6",
+  "name": "order-start",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "order",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "platform": "slack",
+          "lang": "en",
+          "title": "",
+          "replies": [
+            "Small pizza",
+            "Medium pizza",
+            "Large pizza",
+            "XL pizza"
+          ]
+        },
+        {
+          "type": "suggestion_chips",
+          "platform": "google",
+          "lang": "en",
+          "suggestions": [
+            {
+              "title": "Small pizza"
+            },
+            {
+              "title": "Medium pizza"
+            },
+            {
+              "title": "Large pizza"
+            },
+            {
+              "title": "XL pizza"
+            }
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "What would you like?"
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "slack": true,
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
