@@ -5,7 +5,7 @@ const { WebhookClient, Suggestion, Payload } = require('dialogflow-fulfillment')
 const got = require('got');
 const currencyFormatter = require('currency-formatter');
 
-const baseUrl = 'https://cold-hound-55.localtunnel.me';
+const baseUrl = 'https://weak-falcon-45.localtunnel.me';
  
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
  

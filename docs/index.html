@@ -99,27 +99,36 @@
 				</div>
 				<aside class="notes">
 						<ul>
-								<li>Work for SingleStone - CX consulting firm here in Richmond</li>
-								<li>Been in IT for over 20 years, most of that time as a hands-on-keyboard developer. Web stuff for past 14 years</li>
-							</ul>
+							<li>Work for SingleStone - technology consulting firm here in Richmond</li>
+							<li>We're hiring. Come chat later if you want to learn more.</li>
+							<li>Been in IT for over 20 years, much of that time as a hands-on-keyboard developer and architect.</li>
+							<li>I love Javascript. Rare for an old guuy like me.</li>
+						</ul>
 				</aside>
 			</section>
 
 			<!-- Agenda - Done! -->
 			<section>
-					<h2>Agenda</h2>
-					<br/>
-					<br/>
-					<ol>
-						<li>Conversational Interfaces</li>
-						<li>Dialogflow Overview</li>
-						<li>Dialogflow Concepts</li>
-						<li>Code Walkthrough</li>
-					</ol>
+				<h2>Agenda</h2>
+				<br/>
+				<div style="line-height: 1.5em">
+					<p>Dialogflow Overview</p>
+					<p>Dialogflow Concepts</p>
+					<p>Demo</p>
+					<p>Code Walkthrough</p>
+				</div>
+				<aside class="notes">
+					<ul>
+						<li>Brief overview</li>
+						<li>Concepts: agents, intents, parameters, entities, context, fulfillment, responses</li>
+						<li>Demo a pizza ordering bot</li>
+						<li>Walkthrough the code</li>
+					</ul>
+				</aside>
 			</section>
 
 			<!-- Conversational Interfaces -->
-			<section>
+			<!-- <section>
 				<section>
 					<h2>Conversational Interfaces</h2>
 				</section>
@@ -133,7 +142,7 @@
 					<h2>Why is it hard?</h2>
 					<p>Segue to Dialogflow</p>
 				</section>
-			</section>
+			</section> -->
 
 			<!-- Dialogflow: Overview - Done! -->
 			<section class="overview">
@@ -142,7 +151,14 @@
 					<h2>Dialogflow is a service that...</h2>
 					<br/>
 					<br/>
-					<p>"gives users new ways to interact with your product by building engaging voice and text-based conversational interfaces, such as voice apps and chatbots, powered by AI."</p>
+					<p>"gives users new ways to interact with <span class="fragment highlight-blue">your product</span> by building engaging <span class="fragment highlight-red">voice and text-based conversational interfaces</span>, such as voice apps and chatbots, <span class="fragment highlight-green">powered by AI</span>."</p>
+					<aside class="notes">
+						<ul>
+							<li>Your product</li>
+							<li>Voice/text conversational interfaces - natural language</li>
+							<li>Powered by AI - advanced NLP, machine learning, easy to use</li>
+						</ul>
+					</aside>
 				</section>
 
 				<!-- How does it work? -->
@@ -151,8 +167,11 @@
 					<img src="img/df_how.png" height="900"/>
 					<aside class="notes">
 						<ul>
-							<li>Text or speech → Maps to intents → Match and extract parameters/entities → Trigger fulfillment → Deliver response via integration</li>
-							<li>Leverages NLP/machine learning in intent matching and parameter extraction</li>
+							<li>Text or speech from user</li>
+							<li>Delivered via integration</li>
+							<li>DF matches intent and extracts parameters (using NLP/AI)</li>
+							<li>Trigger fulfillment logic (interact with your product, dynamic responses)</li>
+							<li>Deliver response via integration</li>
 						</ul>
 					</aside>
 				</section>
@@ -161,20 +180,19 @@
 				<section>
 					<h2>Why you should care</h2>
 					<br/>
-					<br/>
-					<br/>
-					<div class="fragment fade-in">
+					<h3 class="fragment fade-in" data-fragment-index="4">Conversations as a Service</h3>
+					<div style="line-height: 1.5em" class="fragment fade-out" data-fragment-index="4">
 						<p>Easy to use</p>
-						<p>Solves hard problems</p>
-						<p>Its a service, not a platform</p>
-						<p>Many built-in integrations</p>
+						<p class="fragment fade-in" data-fragment-index="1">Solves hard problems</p>
+						<p class="fragment fade-in" data-fragment-index="2">Its a service, not a platform</p>
+						<p class="fragment fade-in" data-fragment-index="3">Many built-in integrations</p>
 					</div>
 					<aside class="notes">
 						<ul>
-							<li>Easy to use - Abstractions that make sense and the tools are approachable</li>
-							<li>Solves hard problems - NLP and Machine Learning requires specialized skillset and even then is very difficult</li>
-							<li>It's a service, not a product or platform - It does what it does well and gets out of your way</li>
-							<li>Out of the box integrations - Works with many popular chat/voice platforms such as Slack, Google Assistant, Facebook Messenger, Google Hangouts, Skype, Twilio, Google Telephony, and more...</li>
+							<li>Easy to use - Sensible abstractions, approachable/logical toolset</li>
+							<li>Solves hard problems - NLP and Machine Learning requires specialized skillset</li>
+							<li>It's a service, not a product or platform (gets out of your way)</li>
+							<li>Out of the box integrations - Slack, Google Assistant, Facebook Messenger, Google Hangouts, Skype, Twilio, Google Telephony, and more...</li>
 							<li>Conversations as a Service</li>
 						</ul>
 					</aside>
@@ -210,10 +228,9 @@
 				<img src="img/agent_bot.jpeg"/>
 				<aside class="notes">
 					<ul>
-						<li>Virtual agent that handles conversations with your end users</li>
-						<li>Similar to a human call center agent</li>
+						<li>Virtual agent - similar to a human call center agent</li>
 						<li>You train your agent to handle conversation scenarios</li>
-						<li>Top-level container for settings</li>
+						<li>Top-level container for settings associated with your bot</li>
 					</ul>
 				</aside>
 			</section>
@@ -229,10 +246,10 @@
 					<img src="img/intent_match.png">
 					<aside class="notes">
 						<ul>
-							<li>Similar to Alexa's intent</li>
-							<li>Can (and should) have many intents</li>
 							<li>User text or speech is matched against an intent (by Dialogflow)</li>
+							<li>Can (and should) have many intents</li>
 							<li>Output of an intent is a response to the user</li>
+							<li>Similar to Alexa's intent</li>
 							<li>I think of an intent as a method call for your agent</li>
 						</ul>
 					</aside>
@@ -254,8 +271,8 @@
 					</em></p>
 					<aside class="notes">
 						<ul>
-							<li>Example phrases of what a user might say</li>
-							<li>Used to match an intent</li>
+							<li>Example phrases (or utterances) of what a user might say</li>
+							<li>Used by DF to match an intent</li>
 							<li>You don't need to provide every example but 10 training phrases is a best practice</li>
 						</ul>
 					</aside>
@@ -283,7 +300,7 @@
 					</div>
 					<aside class="notes">
 						<ul>
-							<li>Created when an agent is created</li>
+							<li>Created when an agent is created, but are editable</li>
 							<li>Welcome - triggered by the welcome event</li>
 							<li>Fallback - triggered when no custom intent is matched</li>
 						</ul>
@@ -307,9 +324,9 @@
 					</em></p>
 					<aside class="notes">
 						<ul>
-							<li>The parts of the user utterance that are important for building a response</li>
+							<li>The data elements of the utterance</li>
 							<li>Each intent has it's own set of parameters (you can have more than 1)</li>
-							<li>Just like method parameters</li>
+							<li>Method parameters</li>
 						</ul>
 					</aside>
 				</section>
@@ -354,8 +371,9 @@
 					
 					<aside class="notes">
 						<ul>
-							<li>Lists can contain multiple items</li>
-							<li>Dialogflow is smart about it</li>
+							<li>Parameters can contain multiple items (lists)</li>
+							<li>Maps to an array</li>
+							<li>Smart - commas, "ands" and connecting words are removed</li>
 						</ul>
 					</aside>
 				</section>
@@ -378,7 +396,11 @@
 						</p>
 					<aside class="notes">
 						<ul>
+							<li>Tokens based on parameter name</li>
 							<li>Can be used in: Responses, Prompts and parameter values</li>
+							<li>Example: static response</li>
+							<li>Example: parameter values</li>
+							<li>Example: rendered response</li>
 						</ul>
 					</aside>
 				</section>
@@ -386,86 +408,18 @@
 				<section>
 					<h2>Prompts</h2>
 					<br/>
-					<br/>
-					<p><strong>User:</strong> I'd like a pizza</p>
-					<br/>
+					<p><strong>User:</strong> I'd like a pan pizza</p>
 					<p class="fragment fade-in"><strong>Agent:</strong> What size pizza would you like?</p>
+					<p class="fragment fade-in"><strong>User:</strong> Small</p>
+					<p class="fragment fade-in"><strong>Agent:</strong> What toppings would you like?</p>
+					<p class="fragment fade-in"><strong>User:</strong> Just cheese, please</p>
+					<p class="fragment fade-in"><strong>Agent:</strong> A small pan pizza with cheese. Got it.</p>
 					<aside class="notes">
 						<ul>
-							<li>Triggered when required parameters are missing</li>
-							<li>Mulitple variants.</li>
+							<li>Automatic responses triggered when required parameters are missing</li>
+							<li>Mulitple prompt variants can be provided. More realistic</li>
 							<li>The parameter order determines the order in which DF will prompt for missing parameters</li>
 							<li>Once all parameters are provided, intent processing will continue</li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-
-			<!-- Dialogflow Concepts: Responses - Done!-->
-			<section class="responses">
-				<section>
-					<h2>Responses</h2>
-					<br/>
-					<br/>
-					<div class="fragment fade-in">
-						<p>Static</p>
-						<p>Dynamic</p>
-						<p>Platform specific</p>
-						<p>Rich (Graphical)</p>
-					</div>
-					<aside class="notes">
-						<ul>
-							<li>The content that is returned to the user after an intent is processed</li>
-							<li>Think of it as what is returned from the method call</li>
-							<li>Can define different responses for each supported platform</li>
-							<li>Can be leveraged by static or dynamic responses</li>
-							<li>Leverage capabilities of that platform</li>
-						</ul>
-					</aside>
-				</section>
-
-				<section>
-					<h2>Rich Responses</h2>
-					<h3>Quick Reply</h3>
-					<br/>
-					<br/>
-					<img src="img/rich_quickreply.png"/>
-					<aside class="notes">
-						<ul>
-							<li></li>
-						</ul>
-					</aside>
-				</section>
-
-				<section>
-					<h2>Rich Responses</h2>
-					<h3>Image</h3>
-					<img src="img/rich_image.png"/>
-					<aside class="notes">
-						<ul>
-							<li></li>
-						</ul>
-					</aside>
-				</section>
-
-				<section>
-					<h2>Rich Responses</h2>
-					<h3>Card</h3>
-					<img src="img/rich_card.png"/>
-					<aside class="notes">
-						<ul>
-							<li></li>
-						</ul>
-					</aside>
-				</section>
-
-				<section>
-					<h2>Rich Responses</h2>
-					<h3>Custom Payload</h3>
-					<img src="img/rich_custom.png"/>
-					<aside class="notes">
-						<ul>
-							<li></li>
 						</ul>
 					</aside>
 				</section>
@@ -477,11 +431,9 @@
 					<h2>Entities</h2>
 					<br/>
 					<br/>
-					<div class="fragment fade-in">
-						<p>Types for parameters</p>
-						<p>System entities</p>
-						<p>Developer entities</p>
-					</div>
+					<p>Types for parameters</p>
+					<p class="fragment fade-in">System entities</p>
+					<p class="fragment fade-in">Developer entities</p>
 
 					<aside class="notes">
 						<ul>
@@ -495,7 +447,7 @@
 				<section>
 					<h2>System Entities</h2>
 					<table>
-						<tr class="fragment fade-in">
+						<tr>
 							<th style="width:400px">Date and Time</th>
 							<td>date-time, date, date-period, time, time-period</td>
 						</tr>
@@ -513,7 +465,7 @@
 						</tr>
 						<tr class="fragment fade-in">
 							<th>Geography</th>
-							<td>address, zip code, capital, country, city, state, attraction, airports</td>
+							<td>location, zip code, capital, country, city, state, attraction, airports</td>
 						</tr>
 						<tr class="fragment fade-in">
 							<th>Contacts</th>
@@ -556,9 +508,53 @@
 							<li>Create your own entities to supplement system entities</li>
 							<li>Type: type of information you want to extract (e.g. vegetable)</li>
 							<li>Entries: a set of phrases that make up the type</li>
-							<li>Aliasas: equivalent phrases for each enty</li>
+							<li>Aliasas: equivalent phrases for each entry</li>
 							<li>Raw mode as CSV or JSON</li>
 							<li>API to update entries</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<!-- Context - Done!-->
+			<section class="context">
+				<section>
+					<h2>Context</h2>
+					<br/>
+					<p class="fragment fade-in">
+						<strong>User:</strong> What's the weather like in <span class="location">Richmond, VA?</span><br/>
+						<strong>Agent:</strong> <span class="time">Right now</span> in <span class="location">Richmond</span>, it's 78° under partly cloudy skies.
+					</p>
+					<br/>
+					<p class="fragment fade-in">
+							<strong>User:</strong> Will it rain <span class="time">tomorrow?</span><br/>
+							<strong>Agent:</strong> <span class="time">Tomorrow</span> in <span class="location">Richmond</span>, there is an 80% chance of rain.
+					</p>
+					<br/>
+					<p class="fragment fade-in">
+							<strong>User:</strong> Will it be hot?<br/>
+							<strong>Agent:</strong> <span class="time">Tomorrow</span> in <span class="location">Richmond</span>, the high is 85° and the low is 66°.
+					</p>
+					<aside class="notes">
+						<ul>
+							<li>Just like a normal conversation context, don't have to repeat themselves</li>
+							<li>Control the flow of the conversation, feel more natural</li>
+							<li>Session - Defined as a "string" with some associated data</li>
+							<li>Example 1 - WeatherIntent, LocationCtx=Richmond, DateCtx=Today</li>
+							<li>Example 2 - RainIntent, LocationCtx=Richmond, DateCtx=Tomorrow</li>
+							<li>Example 3 - TempIntent, LocationCtx=Richmond, DateCtx=Tomorrow</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>How it works</h2>
+					<img src="img/contexts.jpg" width="900"/>
+					<aside class="notes">
+						<ul>
+							<li>If an intent has an output context, it becomes active whenever that intent is matched</li>
+							<li>If an intent has an input context, it only matches if that context is active</li>
+							<li>Lifespan - defines how the duration of the context (time and turns)</li>
 						</ul>
 					</aside>
 				</section>
@@ -590,7 +586,7 @@
 						<ul>
 							<li>Intent is matched</li>
 							<li>If fulfillment is enabled for intent</li>
-							<li>Triggers fulfillment with name of intent, parmaters, etc..</li>
+							<li>Triggers fulfillment with name of intent, parameters, etc..</li>
 							<li>Fulfillment performs logic and creates response</li>
 						</ul>
 					</aside>
@@ -624,7 +620,7 @@
 				</section>
 
 				<section>
-					<h2>NodeJS Library</h2>
+					<h2>NodeJS Fulfillment Library</h2>
 					<br/>
 					<pre><code class="hljs javascript" data-trim data-noescape>
 const functions = require('firebase-functions');
@@ -653,44 +649,77 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 				</section>
 			</section>
 
-			<!-- Context - Done!-->
-			<section class="context">
+			<!-- Dialogflow Concepts: Responses - Done!-->
+			<section class="responses">
 				<section>
-					<h2>Context</h2>
+					<h2>Responses</h2>
 					<br/>
-					<p class="fragment fade-in">
-						<strong>User:</strong> What's the weather like in <span class="location">Richmond, VA?</span><br/>
-						<strong>Agent:</strong> <span class="time">Right now</span> in <span class="location">Richmond</span>, it's 78° under partly cloudy skies.
-					</p>
 					<br/>
-					<p class="fragment fade-in">
-							<strong>User:</strong> Will it rain <span class="time">tomorrow?</span><br/>
-							<strong>Agent:</strong> <span class="time">Tomorrow</span> in <span class="location">Richmond</span>, there is an 80% chance of rain.
-					</p>
-					<br/>
-					<p class="fragment fade-in">
-							<strong>User:</strong> Will it be hot?<br/>
-							<strong>Agent:</strong> <span class="time">Tomorrow</span> in <span class="location">Richmond</span>, the high is 85° and the low is 66°.
-					</p>
+					<p>Static</p>
+					<p class="fragment fade-in">Dynamic</p>
+					<p class="fragment fade-in">Platform specific</p>
+					<p class="fragment fade-in">Rich (Graphical)</p>
 					<aside class="notes">
 						<ul>
-							<li>Just like a normal conversation context</li>
-							<li>Your users don't have to repeat themselves</li>
-							<li>You can control the flow of the conversation</li>
-							<li>Make the interaction feel more natural</li>
-							<li>Defined as a "string" with some associated data</li>
+							<li>The content that is returned to the user after an intent is processed</li>
+							<li>Return value of the method call</li>
+							<li>Static - defined in the DF console</li>
+							<li>Dynamic - provided by fulfillment logic</li>
+							<li>Platform - Can define different responses</li>
+							<li>Rich responses - leverage capabilities of platform</li>
 						</ul>
 					</aside>
 				</section>
 
 				<section>
-					<h2>How it works</h2>
-					<img src="img/contexts.jpg" width="900"/>
+					<h2>Rich Responses</h2>
+					<h3>Suggestion</h3>
+					<br/>
+					<br/>
+					<img src="img/rich_quickreply.png"/>
 					<aside class="notes">
 						<ul>
-							<li>If an intent has an output context, it becomes active whenever that intent is matched</li>
-							<li>If an intent has an input context, it only matches if that context is active</li>
-							<li>Lifespan - defines how the duration of the context (time and turns)</li>
+							<li>Suggest actions or answers in response to an agent message</li>
+							<li>Usually rendered as buttons or links</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Rich Responses</h2>
+					<h3>Image</h3>
+					<img src="img/rich_image.png"/>
+					<aside class="notes">
+						<ul>
+							<li></li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Rich Responses</h2>
+					<h3>Card</h3>
+					<img src="img/rich_card.png"/>
+					<aside class="notes">
+						<ul>
+							<li>Title</li>
+							<li>Subtitle</li>
+							<li>Image</li>
+							<li>Action buttons</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Rich Responses</h2>
+					<h3>Custom Payload</h3>
+					<img src="img/rich_custom.png"/>
+					<aside class="notes">
+						<ul>
+							<li>Platform specific</li>
+							<li>Trouble maintaining feature parity across platforms</li>
+							<li>In some cases, supported not very well documented</li>
+							<li>May be better off with a custom integration if you want to leverage full power of a platform</li>
 						</ul>
 					</aside>
 				</section>
